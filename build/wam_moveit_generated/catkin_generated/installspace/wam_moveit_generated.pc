@@ -1,0 +1,8 @@
+prefix=/home/robot/rieman_ws/install
+
+Name: wam_moveit_generated
+Description: Description of wam_moveit_generated
+Version: 0.2.0
+Cflags: 
+Libs: -L/home/robot/rieman_ws/install/lib 
+Requires: std_msgs std_srvs sensor_msgs geometry_msgs trajectory_msgs moveit_core moveit_ros_planning_interface interactive_markers wam_common

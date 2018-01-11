@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "rosjson_time")
+set(rosjson_time_MAINTAINER "Ian McMahon <imcmahon@grasp.upenn.edu>, Francisco Vina <fevb@kth.se>")
+set(rosjson_time_DEPRECATED "")
+set(rosjson_time_VERSION "0.1.0")
+set(rosjson_time_BUILD_DEPENDS "rospy" "roslib")
+set(rosjson_time_RUN_DEPENDS "rospy" "roslib")
+set(rosjson_time_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,8 @@
+prefix=/home/robot/rieman_ws/install
+
+Name: rosjson_time
+Description: Description of rosjson_time
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/robot/rieman_ws/install/lib 
+Requires: rospy roslib

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "wam_teleop")
+set(wam_teleop_MAINTAINER "robot <hm@barrett.com>")
+set(wam_teleop_DEPRECATED "")
+set(wam_teleop_VERSION "1.0.0")
+set(wam_teleop_BUILD_DEPENDS "roscpp" "sensor_msgs" "std_srvs" "joy" "wam_msgs")
+set(wam_teleop_RUN_DEPENDS "roscpp" "sensor_msgs" "std_srvs" "joy" "wam_msgs")
+set(wam_teleop_BUILDTOOL_DEPENDS "catkin")

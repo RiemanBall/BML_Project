@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/robot/rieman_ws/devel/setup.sh

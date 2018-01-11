@@ -1,0 +1,8 @@
+prefix=/home/robot/rieman_ws/install
+
+Name: wam_node
+Description: Description of wam_node
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/robot/rieman_ws/install/lib -lSRN_lib -lirLib_lib
+Requires: std_msgs std_srvs sensor_msgs geometry_msgs trajectory_msgs roscpp tf wam_msgs roslib biotac_sensors cheetah_lib rosbag

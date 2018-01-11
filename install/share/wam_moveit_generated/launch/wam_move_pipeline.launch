@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find wam_moveit_generated)/launch/demo.launch"/>
+
+  <node name="wam_move_pipeline" pkg="wam_moveit_generated" type="wam_move_pipeline" respawn="false" output="screen">
+  </node>
+
+</launch>

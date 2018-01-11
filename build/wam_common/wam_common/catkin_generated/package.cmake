@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "wam_common")
+set(wam_common_MAINTAINER "robot <hm@barrett.com>")
+set(wam_common_DEPRECATED "")
+set(wam_common_VERSION "1.0.0")
+set(wam_common_BUILD_DEPENDS )
+set(wam_common_RUN_DEPENDS "wam_teleop" "wam_srvs" "wam_msgs")
+set(wam_common_BUILDTOOL_DEPENDS "catkin")

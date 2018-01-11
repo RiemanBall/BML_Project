@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "wam_msgs")
+set(wam_msgs_MAINTAINER "robot <hm@barrett.com>")
+set(wam_msgs_DEPRECATED "")
+set(wam_msgs_VERSION "0.0.0")
+set(wam_msgs_BUILD_DEPENDS "message_generation" "geometry_msgs" "sensor_msgs" "std_msgs" "trajectory_msgs")
+set(wam_msgs_RUN_DEPENDS "message_runtime" "geometry_msgs" "sensor_msgs" "std_msgs" "trajectory_msgs")
+set(wam_msgs_BUILDTOOL_DEPENDS "catkin")

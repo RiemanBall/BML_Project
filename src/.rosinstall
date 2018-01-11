@@ -1,0 +1,2 @@
+- git: {local-name: biotac_driver, uri: 'https://github.com/kth-ros-pkg/biotac_driver.git',
+    version: hydro}

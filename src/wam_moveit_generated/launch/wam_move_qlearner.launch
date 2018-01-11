@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find wam_moveit_generated)/launch/demo.launch"/>
+
+  <node name="wam_move_qlearner" pkg="wam_moveit_generated" type="wam_move_qlearner" respawn="false" output="screen">
+  </node>
+
+</launch>

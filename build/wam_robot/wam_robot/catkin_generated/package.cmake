@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "wam_robot")
+set(wam_robot_MAINTAINER "robot <hm@barrett.com>")
+set(wam_robot_DEPRECATED "")
+set(wam_robot_VERSION "1.0.0")
+set(wam_robot_BUILD_DEPENDS )
+set(wam_robot_RUN_DEPENDS "wam_node")
+set(wam_robot_BUILDTOOL_DEPENDS "catkin")

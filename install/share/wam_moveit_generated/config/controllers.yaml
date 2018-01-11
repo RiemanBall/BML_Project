@@ -1,0 +1,26 @@
+controller_list:
+  - name: arm
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - wam_j1_joint
+      - wam_j2_joint
+      - wam_j3_joint
+      - wam_j4_joint
+      - wam_j5_joint
+      - wam_j6_joint
+      - wam_j7_joint
+  - name: hand
+    action_ns: gripper_action
+    type: GripperCommand
+    default: true
+    joints:
+      - bhand_j11_joint
+      - bhand_j12_joint
+      - bhand_j13_joint
+      - bhand_j21_joint
+      - bhand_j22_joint
+      - bhand_j23_joint
+      - bhand_j32_joint
+      - bhand_j33_joint

@@ -1,0 +1,48 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(wam_node)
+find_package(catkin REQUIRED COMPONENTS std_msgs std_srvs sensor_msgs geometry_msgs trajectory_msgs roscpp roslib biotac_sensors cheetah_lib tf wam_msgs rosbag)
+
+#set the default path for built executables to the "bin" directory
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+#set the default path for built libraries to the "lib" directory
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
+
+include_directories(include
+  ${catkin_INCLUDE_DIRS}
+)
+
+# add additional libraries
+set(SENSOR_LIB_LIST src/lib_serial_comm.cpp)
+add_library(SRN_lib ${SENSOR_LIB_LIST})
+
+#set(irLib_LIB_LIST include/irLib/src/SE3.cpp include/irLib/src/SO3.cpp)
+#add_library(irLib_lib ${irLib_LIB_LIST})
+
+
+find_package(Barrett REQUIRED)
+link_directories(${BARRETT_LIB_DIRS} src)
+include_directories(${BARRETT_INCLUDE_DIRS})
+add_definitions(${BARRETT_DEFINITIONS})
+
+
+catkin_package(
+    LIBRARIES SRN_lib irLib_lib
+    DEPENDS std_msgs std_srvs sensor_msgs geometry_msgs trajectory_msgs roscpp tf wam_msgs roslib biotac_sensors cheetah_lib rosbag
+)
+
+
+add_executable(wam_node src/wam_node_rieman.cpp)
+target_link_libraries(wam_node ${BARRETT_LIBRARIES} ${catkin_LIBRARIES})
+add_dependencies(wam_node ${catkin_EXPORTED_TARGETS} wam_msgs_gencpp)
+
+add_executable(IMUJointPos_subscriber src/IMUJointPos_subscriber.cpp)
+target_link_libraries(IMUJointPos_subscriber ${BARRETT_LIBRARIES} ${catkin_LIBRARIES} SRN_lib)
+add_dependencies(IMUJointPos_subscriber ${catkin_EXPORTED_TARGETS} wam_msgs_gencpp)
+
+add_executable(repeatTraj_client src/repeatTraj_client.cpp)
+target_link_libraries(repeatTraj_client ${BARRETT_LIBRARIES} ${catkin_LIBRARIES})
+add_dependencies(repeatTraj_client ${catkin_EXPORTED_TARGETS} wam_msgs_gencpp trajectory_msgs_gencpp)
+
+
+

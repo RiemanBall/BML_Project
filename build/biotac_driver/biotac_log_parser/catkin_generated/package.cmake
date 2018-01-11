@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "biotac_log_parser")
+set(biotac_log_parser_MAINTAINER "Francisco Vina <fevb@kth.se>")
+set(biotac_log_parser_DEPRECATED "")
+set(biotac_log_parser_VERSION "0.1.0")
+set(biotac_log_parser_BUILD_DEPENDS "rospy" "biotac_sensors" "rosjson_time" "rosbag")
+set(biotac_log_parser_RUN_DEPENDS "rospy" "biotac_sensors" "rosjson_time" "rosbag")
+set(biotac_log_parser_BUILDTOOL_DEPENDS "catkin")

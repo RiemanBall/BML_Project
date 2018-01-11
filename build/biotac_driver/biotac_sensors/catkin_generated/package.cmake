@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "biotac_sensors")
+set(biotac_sensors_MAINTAINER "Francisco Vina <fevb@kth.se>")
+set(biotac_sensors_DEPRECATED "")
+set(biotac_sensors_VERSION "0.1.0")
+set(biotac_sensors_BUILD_DEPENDS "roscpp" "cheetah_lib" "message_generation" "std_msgs")
+set(biotac_sensors_RUN_DEPENDS "roscpp" "cheetah_lib" "message_runtime" "std_msgs")
+set(biotac_sensors_BUILDTOOL_DEPENDS "catkin")

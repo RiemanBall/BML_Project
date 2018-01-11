@@ -1,0 +1,8 @@
+prefix=/home/robot/rieman_ws/install
+
+Name: biotac_sensors
+Description: Description of biotac_sensors
+Version: 0.1.0
+Cflags: -I/home/robot/rieman_ws/install/include
+Libs: -L/home/robot/rieman_ws/install/lib -lbiotacpub
+Requires: message_runtime roscpp cheetah_lib std_msgs

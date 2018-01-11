@@ -1,0 +1,8 @@
+prefix=/home/robot/rieman_ws/install
+
+Name: wam_msgs
+Description: Description of wam_msgs
+Version: 0.0.0
+Cflags: -I/home/robot/rieman_ws/install/include
+Libs: -L/home/robot/rieman_ws/install/lib 
+Requires: message_runtime geometry_msgs sensor_msgs std_msgs trajectory_msgs
