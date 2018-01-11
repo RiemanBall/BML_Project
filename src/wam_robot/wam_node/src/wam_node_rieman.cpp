@@ -369,7 +369,7 @@ template<size_t DOF>
     void
     updateRT(ProductManager& pm);
     void
-    JointPosTorRecording();
+    JointPosForRecording();
     bool
     startRecordJointVals(wam_msgs::LoggerInfo::Request &req, wam_msgs::LoggerInfo::Response &res);
     bool
@@ -697,7 +697,7 @@ template<size_t DOF>
 */
 
 template<size_t DOF>
-  void WamNode<DOF>::JointPosTorRecording()
+  void WamNode<DOF>::JointPosForRecording()
   {
     // shouldLogJointVals = true;
     systems::Ramp time(pmPtr->getExecutionManager());
@@ -762,7 +762,7 @@ template<size_t DOF>
   {
    if(req.record == 1)
    {
-      JointValsLoggingThread.create_thread( boost::bind(&WamNode<DOF>::JointPosTorRecording, this) );
+      JointValsLoggingThread.create_thread( boost::bind(&WamNode<DOF>::JointPosForRecording, this) );
       ROS_INFO("Started JointValsLoggingThread");
       res.success = 1;
    }
@@ -1655,7 +1655,7 @@ template<size_t DOF>
                 break;
             }
             case 'G': { 
-                wam_node.JointPosTorRecording();
+                wam_node.JointPosForRecording();
                 check = false;
                 break;
             }
