@@ -1,0 +1,28 @@
+% Initialize the orientation of the finger and the true orientation of the
+% IMUs in terms of quaternion.
+
+function [IMU_truth, finger_truth] = initialization(k,frameNum)
+
+%% Initialization
+% Set the initial configureation of the finger
+randConfig_hand = [0 randn(1,2); 0 0 randn; 0 0 randn]/180*pi;          % Random deviation from the straght configuration
+q_rConfig_hand = r2q(randConfig_hand);
+% randOrient_hand = randn(1,3)*4/180*pi;                                         % Random deviation of the proximal frame from the global frame
+randOrient_hand = zeros(1,3);                                                           % No deviation from the global frame
+q_rOrient_hand = r2q(randOrient_hand);
+
+finger_truth = struct('orient',repmat(Quaternion(),1,3));
+
+% Set the true orientation of the IMUs
+randPlacement = randn(frameNum,3)*4/180*pi;      % misplacement with rotation angle w.r.t x-, y-, and z-axis for number = frameNum IMUs
+
+IMU_truth.orient = r2q(randPlacement);
+
+
+for i = 1:frameNum
+    finger_truth.orient(i) = q_rOrient_hand*q_rConfig_hand(i);
+    IMU_truth.orient(i) = IMU_truth.orient(i)*q_rConfig_hand(i);
+end
+
+finger_truth = repmat(finger_truth,k,1);
+IMU_truth = repmat(IMU_truth,k,1);
